@@ -1,6 +1,15 @@
 console.log('howdy partner')
+let myNum = 25
 
-alert('this is an alert')
+function guess(){
+    let guessNum = prompt('guess a number')
+        if(guessNum < myNum){
+            alert('higher')
+        } else if (guessNum > myNum){
+            alert('lower')
+        } else if (guessNum == myNum){
+            alert('Correct!')
+    }
+}
+guess();
 
-let favoriteColor = prompt('what is your favorite color?')
-console.log(favoriteColor)
