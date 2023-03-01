@@ -65,7 +65,3 @@ function guess(){
     }
     saveUsers()
 }
-
-
-console.log(previousPlayers['userName'])
-//currently cannot get it to check the value at the userName to compare attemp counts
