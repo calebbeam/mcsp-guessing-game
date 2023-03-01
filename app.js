@@ -1,4 +1,4 @@
-let myNum = 25
+let myNum = Math.floor( Math.random() * 10 ) 
 let guessCount = 0
 let pastNums = ''
 let userName;
@@ -13,7 +13,7 @@ function getName(){
 }
 
 function getNum(){
-    guessNum = parseInt(prompt('guess a number ' + userName))
+    guessNum = parseInt(prompt('guess a number between 1 and 10 please'))
     guessCounter()
 }
 
