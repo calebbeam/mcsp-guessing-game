@@ -12,20 +12,20 @@ function guess(){
         if(guessNum != myNum){
             if(guessNum > myNum){
                 alert(`Sorry ${userName} guess lower!`)
-                pastNums += ', '
-                guess()
+
             } if(guessNum < myNum){
                 alert(`Sorry ${userName} guess higher!`)
-                pastNums += ', '
-                guess()
+
             } 
-        } else {
+            pastNums += ', '
+            guess()
+        } else if(guessNum == myNum){
             alert(`Thats correct ${userName}! You only took ${guessCount} tries, your entries were ${pastNums}`)
             if(prompt(`Would you like to play again ${userName}?`) == 'yes'){
                 playAgain()
             } else{
                 alert(`Thanks for playing ${userName}`)
-            }
+        }
     }
 }
 
@@ -34,7 +34,7 @@ function getName(){
 }
 
 function getNum(){
-    guessNum = parseInt(prompt('guess a number'))
+    guessNum = parseInt(prompt('guess a number ' + userName))
     guessCounter()
 }
 
@@ -44,10 +44,10 @@ function guessCounter(){
 }
 
 function playAgain(){
-    getName()
     guessCount = 0
     pastNums = ''
     userName= ''
     guessNum;
+    getName()
     guess()
 }
