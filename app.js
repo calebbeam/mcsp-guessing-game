@@ -6,21 +6,26 @@ let guessNum;
 
 getName()
 guess();
-//do a new game function
-//create an edge case for
 
 function guess(){
     getNum()
         if(guessNum != myNum){
             if(guessNum > myNum){
                 alert(`Sorry ${userName} guess lower!`)
+                pastNums += ', '
                 guess()
             } if(guessNum < myNum){
                 alert(`Sorry ${userName} guess higher!`)
+                pastNums += ', '
                 guess()
             } 
         } else {
             alert(`Thats correct ${userName}! You only took ${guessCount} tries, your entries were ${pastNums}`)
+            if(prompt(`Would you like to play again ${userName}?`) == 'yes'){
+                playAgain()
+            } else{
+                alert(`Thanks for playing ${userName}`)
+            }
     }
 }
 
@@ -35,6 +40,14 @@ function getNum(){
 
 function guessCounter(){
     guessCount++
-    pastNums += guessNum + ', '
+    pastNums += guessNum 
 }
 
+function playAgain(){
+    getName()
+    guessCount = 0
+    pastNums = ''
+    userName= ''
+    guessNum;
+    guess()
+}
