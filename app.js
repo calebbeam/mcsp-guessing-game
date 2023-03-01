@@ -35,6 +35,7 @@ function playAgain(){
     pastNums = ''
     userName= ''
     guessNum;
+    myNum = Math.floor( Math.random() * 10 )
     getName()
     guess()
 }
